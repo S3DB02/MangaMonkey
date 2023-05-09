@@ -1,11 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 
-export default function CarouselCell() {
-    // const manga = fetch('http://localhost:5000/').then(Response => Response.json().then(data => {console.log(data);}
-    //let manga = fetch('http://localhost:5000/').then(Response => {return Response.json();}).then(data => {console.log(data)})
-    // const manga = fetch('http://localhost:5000/manga')
-    // console.log(manga)
+export default function CarouselCell({ selectedGenre }) {
 
     const [manga, setManga] = useState([]);
 
@@ -18,14 +13,13 @@ export default function CarouselCell() {
         fetchData();
     }, []);
 
+    const filteredManga = selectedGenre
+        ? manga.filter((m) => m.genres.includes(selectedGenre))
+        : manga;
+
     return (
-        // <div>
-        //     {/* <div className="carousel-cell" style={{ backgroundImage: {element.coverLink} }}>
-        //         <a href={element.id}>{element.title}</a>
-        //     </div> */}
-        // </div>
         <div style={{display: 'flex', flex: 1, flexDirection: 'row'}}>
-            {manga.map((element) => (
+            {filteredManga.map((element) => (
                 <div
                     className="carousel-cell"
                     style={{ backgroundImage: `url(${element.coverLink})`, width: "100px", height: "180px", backgroundSize: "cover", margin: "40px" }}
