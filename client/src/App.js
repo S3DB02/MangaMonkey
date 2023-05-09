@@ -1,11 +1,12 @@
 import './App.css';
 import CarouselCell from './Components/CarouselCell.js';
+import Manga from './Components/Manga.js';
+import Chapter from './Components/Chapter.js';
+import GenreFilter from './Components/GenreFilter';
 
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Manga from './Components/Manga.js';
-import Chapter from './Components/Chapter.js';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path="/" element={<CarouselCell />} />
+          <Route path="/" element={<><CarouselCell /> <GenreFilter/></>} />
           <Route exact path="/manga/:id" element={<Manga />} />
           <Route exact path="/manga/:mangaId/:id" element={<Chapter />} />
         </Routes>
