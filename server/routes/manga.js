@@ -12,10 +12,12 @@ router.get("/", async (req, res) => {
     response.data.data.forEach(manga => {
         console.log(JSON.stringify(manga.relationships[2]))
         const coverimage = manga.relationships.find(el => el.type === "cover_art")
+        const genres = manga.attributes.tags.filter(tag => tag.attributes.group === 'genre').map(tag => tag.attributes.name.en)
         finalResponse.mangas.push({
             coverLink: `https://uploads.mangadex.org/covers/${manga.id}/${coverimage.attributes.fileName}`,
             title: manga.attributes.title.en,
-            id: manga.id
+            id: manga.id,
+            genres: genres
         });
     })
     res.send(finalResponse)
