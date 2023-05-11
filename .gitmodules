@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/S3DB02/mangamonkey-frontend
+[submodule "manga"]
+	path = manga
+	url = https://github.com/S3DB02/mangamonkey-manga-api
