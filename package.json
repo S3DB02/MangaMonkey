@@ -1,0 +1,19 @@
+{
+  "name": "mangamonkey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S3DB02/MangaMonkey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S3DB02/MangaMonkey/issues"
+  },
+  "homepage": "https://github.com/S3DB02/MangaMonkey#readme"
+}
