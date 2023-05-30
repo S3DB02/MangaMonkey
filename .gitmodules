@@ -4,3 +4,9 @@
 [submodule "manga"]
 	path = manga
 	url = https://github.com/S3DB02/mangamonkey-manga-api
+[submodule "review"]
+	path = review
+	url = https://github.com/S3DB02/mangamonkey-review-api.git
+[submodule "user"]
+	path = user
+	url = https://github.com/S3DB02/mangamonkey-user-api.git
