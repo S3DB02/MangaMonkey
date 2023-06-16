@@ -1,5 +1,13 @@
 version: '3'
 services:
+  db:
+    container_name: mangamonkey-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: manga_root
+      MYSQL_DATABASE: mangamonkey
+
   client:
     container_name: mangamonkey
     build: ./frontend
@@ -16,4 +24,15 @@ services:
       - ./manga:/usr/src/app
     ports:
       - "5000:5000"
+    restart: always
+
+  users:
+    container_name: mangamonkey_users
+    build: ./user
+    env_file:
+      - ./user/.env
+    volumes:
+      - ./user:/usr/src/app
+    ports:
+      - "5001:5001"
     restart: always
