@@ -1,12 +1,58 @@
 # MangaMonkey
+## The next generation of manga reading.
+![License](https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge&color=011910)
 
+Meet MangaMonkey, the best place to read and easily track your manga reading progress.
 
-## Problem
-Over the years, digesting written content online has become the norm. Reading different genres like books, news, comics, and mangas on a computer of some sort is the preferred way by many. For those, there are plenty of websites to consume your preferred type of content. But not a lot of them have progress trackers built-in. Especially regarding comic and manga consumption, it can be quite confusing to keep track of your progress because usually multiple books are being read. Readers either have to rely on third-party software to track their reading progress or track it by hand.
+## Prerequisites
 
-## Solution
-This project aims to solve that problem by consolidating the two into one uniform website for avid manga readers. This project aims to host one of the biggest internet's manga databases powered by Mangadex. Also, the focus of this project is to have a page-precise progress tracking system built-in. One of the possible features is to have a favorites list or personal library others can inspect.
+- Node.js
+- Docker
+- Docker Compose
 
-## Techonology Choice
-One of this project's goals is to stay relevant in the future for both users and maintainers. That idea had a major role in the technological stack choice for this project. For the backend, Node.js was chosen for its speed of development and ease of maintainability due to oversaturation of JavaScript developers in the developer community. For the frontend, React was picked because of its popularity and abundance of documentation and amount of packages aimed at extending functionality. In terms of infrastructure, it is planned for this project to be scalable and extensible in the future, so some sort of containerization is required. Docker fits this requirement perfectly, not because of its core functionality but the tooling built around it.
+You can set it up by following these steps:
 
+## 1. Install Node.js
+
+- Open your terminal.
+- Check if Node.js is already installed by running:
+    ```
+    node --version
+    ```
+- If a version number is returned, you have Node.js installed. If not, you can install Node.js. For Linux distributions like Ubuntu, you can use:
+    ```
+    sudo apt-get install nodejs
+    ```
+  On MacOS, you can use [Homebrew](https://brew.sh/):
+    ```
+    brew install node
+    ```
+  For Windows, you can download an executable installer from the Node.js website.
+
+## 2. Install Docker
+
+- Follow the instructions from the official Docker website to install Docker for your specific operating system.
+
+## 3. Install Docker Compose
+
+- Docker Compose is included in most Docker installations. If it's not included in your installation, follow the instructions on the official Docker website to install Docker Compose.
+
+## 4. Set Up Your Project
+
+- Check out app specific instructions on their respective branches.
+- If you are running the project with Docker, make sure to fill in the environment (.env) file with the appropriate variables. Here is an example of how the `.env` file should look:
+
+    ```
+    AUTH0_DOMAIN=your_auth0_domain
+    AUTH0_CLIENT_ID=your_auth0_client_id
+    AUTH0_CLIENT_SECRET=your_auth0_client_secret
+    DB_NAME=your_database_name
+    DB_USER=your_database_user
+    DB_PASS=your_database_password
+    DB_HOST=your_database_host
+    DB_DIALECT=your_database_dialect
+    DB_PORT=your_database_port
+    ```
+
+- Before you run Docker, make sure to send the Auth0 instructions to the frontend.
+- To run the project with Docker Compose, you can use the command `docker-compose up`.
